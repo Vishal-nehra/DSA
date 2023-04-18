@@ -10,8 +10,8 @@ typedef struct simplelink{
     struct simplelink *next;
 }node;
 node *create(node *p){
-    p=(node *)mallock(sizeof(node));
-}
+    p=(node *)malloc(sizeof(node));
+};
 {
     int a;
     printf("\n\n");
@@ -32,7 +32,7 @@ node *create(node *p){
 }
 node *insert_begin(node *p){
     node *temp;
-    temp=(node *)mallock(sizeof(node));
+    temp=(node *)malloc(sizeof(node));
     printf("\nEnter the inserted data : ");
     scanf("%d",&temp->data);
     temp->next=p;
@@ -42,7 +42,7 @@ node *insert_begin(node *p){
 node *insert_end(node *p){
     node *temp,*q;
     q=p;
-    temp=(node *)mallock(sizeof(node));
+    temp=(node *)malloc(sizeof(node));
     printf("\nEnetr the inserted data : ");
     scanf("%d",&temp->data);
     while(p->next!=NULL){
@@ -87,8 +87,8 @@ node *insert_at_spe_pos(node *p){
             }
     else {
         if(x==1){
-            temp=(node *)ma;;oc(sizeof(node));
-            printf("]nEnter the inserted data :");
+            temp=(node *)malloc(sizeof(node));
+            printf("\nEnter the inserted data :");
             scanf("%d",&temp->data);
             temp->next=p;
             r->next=temp;
@@ -132,14 +132,14 @@ node *del_speci_ele(node *p){
     free(q);
     return(p);
 }
-node *delbbedin(node *p){
+node *delbegin(node *p){
     node *q;
     q=p;
     p=p->next;
     free(q);
     return(p);
 }
-node *delte_after(node *p){
+node *delete_after(node *p){
     node *temp,*q;
     int x;
     q=printf("\nEnter the data(afetr which you want to delete): ");
@@ -212,7 +212,7 @@ void screen(node *head){
     printf("\n\n 11-traverse in order(Display)");
     printf("\n\n 12-Traverse in reverse order (Display)");
     printf("\n\n 13-Count no. of node");
-    printf("\n\n 144-Reversed Linked list");
+    printf("\n\n 14-Reversed Linked list");
     printf("\n\n------------------------------------------------");
     printf("\n\n Enter the choice : ");
     scanf("%d",&ch);
@@ -260,3 +260,4 @@ void main()
     head=(node *)NULL;
     screen(head);
 }
+                                                                                                                                                                   
